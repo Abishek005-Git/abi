@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animated Website</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(45deg, red, yellow);
+            background-size: 400% 400%;
+            animation: gradientBG 10s ease infinite;
+            text-align: center;
+            color: white;
+            padding-top: 100px;
+        }
+
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        
+
+        .button {
+            background: #fff;
+            color: black;
+            padding: 10px 20px;
+            font-size: 18px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+            margin: 10px;
+        }
+
+        .button:hover {
+            background: black;
+            color: white;
+        }
+
+        .about-section {
+            margin-top: 50px;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 10px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <img src="c:\Users\91979\Downloads\vijay_processed.jpg" alt="Logo" class="logo">
+    <div class="content">
+        <h1>Welcome to the TVK</h1>
+        <p></p>
+        <div class="buttons">
+            <button class="button" onclick="goToNextPage()">Next Page</button>
+            <button class="button" onclick="exitPage()">Exit</button>
+        </div>
+    </div>
+    <div class="about-section" id="about">
+        <h2>About This Website</h2>
+        <p>This website includes animations, interactive buttons, and dynamic content.</p>
+    </div>
+    <script>
+        function goToNextPage() {
+            window.location.href = "next.html";
+        }
+
+        function exitPage() {
+            window.close(); // Closes the current tab
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Next Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(45deg, green, yellow);
+            background-size: 400% 400%;
+            animation: gradientBG 10s ease infinite;
+            text-align: center;
+            color: white;
+            padding-top: 100px;
+        }
+
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .button {
+            background: #fff;
+            color: black;
+            padding: 15px 30px;
+            font-size: 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+            margin: 10px;
+        }
+
+        .button:hover {
+            background: black;
+            color: white;
+        }
+        .image-container {
+            margin-top: 20px;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            border: 5px solid white;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Welcome to the Motivational TVK</h1>
+    <p>Click below to go back.</p>
+    
+    <div class="image-container">
+        <img src="c:\Users\91979\Desktop\VJ.webp" alt="Motivational Image">
+    </div>
+
+    <button class="button" onclick="goBack()">Go Back</button>
+
+    <script>
+        function goBack() {
+            window.location.href = ".html";
+        }
+    </script>
+
+</body>
+</html>

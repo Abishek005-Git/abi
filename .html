@@ -3,76 +3,94 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Animated Website</title>
+    <title>Neumorphic Toggle Switch</title>
     <style>
         body {
-            margin: 0;
-            padding: 0;
-            font-family: Arial, sans-serif;
-            background: linear-gradient(45deg, red, yellow);
-            background-size: 400% 400%;
-            animation: gradientBG 10s ease infinite;
-            text-align: center;
-            color: white;
-            padding-top: 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: #050505;
+            transition: background 0.3s ease-in-out;
         }
 
-        @keyframes gradientBG {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-
-        
-
-        .button {
-            background: #fff;
-            color: black;
-            padding: 10px 20px;
-            font-size: 18px;
-            border: none;
-            border-radius: 5px;
+        .toggle-container {
+            width: 80px;
+            height: 40px;
+            background: #e0e0e0;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            padding: 5px;
+            box-shadow: 5px 5px 10px #bebebe, -5px -5px 10px #ffffff;
             cursor: pointer;
-            transition: 0.3s;
-            margin: 10px;
+            position: relative;
+            transition: all 0.3s ease;
         }
 
-        .button:hover {
-            background: black;
-            color: white;
+        .toggle-button {
+            width: 30px;
+            height: 30px;
+            background: #ffffff;
+            border-radius: 50%;
+            position: absolute;
+            left: 5px;
+            transition: all 0.3s ease;
+            box-shadow: 2px 2px 5px #bebebe, -2px -2px 5px #ffffff;
         }
 
-        .about-section {
-            margin-top: 50px;
-            padding: 20px;
-            background: rgba(0, 0, 0, 0.5);
-            border-radius: 10px;
-            display: none;
+        .toggle-container.dark {
+            background: #2b2b2b;
+            box-shadow: 5px 5px 10px #1a1a1a, -5px -5px 10px #3a3a3a;
+        }
+
+        .toggle-container.dark .toggle-button {
+            background: #3a3a3a;
+            left: 45px;
+            box-shadow: 2px 2px 5px #1a1a1a, -2px -2px 5px #3a3a3a;
+        }
+
+        .moon-icon {
+            position: absolute;
+            left: 10px;
+            font-size: 18px;
+            color: #999;
+            transition: opacity 0.3s ease;
+        }
+
+        .sun-icon {
+            position: absolute;
+            right: 10px;
+            font-size: 18px;
+            color: #ffcc00;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .dark .moon-icon {
+            opacity: 0;
+        }
+
+        .dark .sun-icon {
+            opacity: 1;
         }
     </style>
 </head>
 <body>
-    <img src="c:\Users\91979\Downloads\vijay_processed.jpg" alt="Logo" class="logo">
-    <div class="content">
-        <h1>Welcome to the TVK</h1>
-        <p></p>
-        <div class="buttons">
-            <button class="button" onclick="goToNextPage()">Next Page</button>
-            <button class="button" onclick="exitPage()">Exit</button>
-        </div>
-    </div>
-    <div class="about-section" id="about">
-        <h2>About This Website</h2>
-        <p>This website includes animations, interactive buttons, and dynamic content.</p>
-    </div>
-    <script>
-        function goToNextPage() {
-            window.location.href = "next.html";
-        }
 
-        function exitPage() {
-            window.close(); // Closes the current tab
-        }
+    <div class="toggle-container" id="toggle">
+        <div class="toggle-button"></div>
+        <div class="moon-icon">🌙</div>
+        <div class="sun-icon">☀️</div>
+    </div>
+
+    <script>
+        const toggle = document.getElementById("toggle");
+        toggle.addEventListener("click", () => {
+            document.body.classList.toggle("dark");
+            toggle.classList.toggle("dark");
+        });
     </script>
+
 </body>
 </html>
